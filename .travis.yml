@@ -3,5 +3,5 @@ language: minimal
 if: branch = master
 
 script:
-- git push --force git@gitee.com:woodenfish42/auto-test.git
+- git push --force git@gitee.com:woodenfish42/auto-test.git master
 
