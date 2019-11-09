@@ -3,5 +3,6 @@ language: minimal
 if: branch = master
 
 script:
-- git push -o "StrictHostKeyChecking no" --force git@gitee.com:woodenfish42/auto-test.git master
+- ssh-keyscan  gitee.com >> ~/.ssh/known_hosts
+- git push --force git@gitee.com:woodenfish42/auto-test.git master
 
