@@ -1,6 +1,6 @@
 language: minimal
 
-if: branch IS master
+if: branch = master
 
 script:
 - git push --force git@gitee.com:woodenfish42/auto-test.git
