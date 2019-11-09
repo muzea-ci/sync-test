@@ -3,5 +3,5 @@ language: minimal
 if: branch = master
 
 script:
-- yes | git push --force git@gitee.com:woodenfish42/auto-test.git master
+- git push -o "StrictHostKeyChecking no" --force git@gitee.com:woodenfish42/auto-test.git master
 
