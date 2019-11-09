@@ -1,7 +1,16 @@
 language: minimal
+services:
+  - docker
 
-if: branch = master
-
-script:
-- git push --force https://woodenfish42:$GITEE@gitee.com/woodenfish42/auto-test.git master
-
+jobs:
+  include:
+    - stage: build deb
+      if: branch = master
+      before_install:
+      - docker pull woodenfish42/hustoj-deb-debian8
+      - docker pull woodenfish42/hustoj-deb-ubuntu18
+      script:
+      - docker images
+    - stage: sync to gitee
+      if: branch = master
+      script: git push --force https://woodenfish42:$GITEE@gitee.com/woodenfish42/auto-test.git master
